@@ -1,0 +1,134 @@
+* {
+    margin:0;
+    padding:0;
+    font-family:"Helvetica Neue", Helvetica, Sans-serif;
+    word-spacing:-2px;
+    overflow: hidden;
+
+}
+
+#element::-webkit-scrollbar {
+    display: none;
+}
+
+h1 {
+    font-size:40px;
+    font-weight:bold;
+    color:#191919;
+    -webkit-font-smoothing: antialiased;
+}
+
+.title {
+    font-size:40px;
+    font-weight:bold;
+    color:#191919;
+    -webkit-font-smoothing: antialiased;
+    top: 20px;
+    position: absolute;
+    left: 40.1%;
+    z-index: 1;
+
+}
+
+h2 {
+    font-weight:normal;
+    font-size:20px;
+    color:#888;
+    padding:5px 0;
+}
+
+.message {
+    background:#181818;
+    color:#FFF;
+    position: absolute;
+    bottom: -220px;
+    left: 0;
+    width: 100%;
+    white-space:nowrap;
+    height: 220px;
+    transition: bottom 500ms ;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: inline-block;
+    box-sizing: border-box;
+
+}
+
+.message h1 {
+    color:#FFF;
+}
+
+#toggle {
+    position:absolute;
+    appearance:none;
+    cursor:pointer;
+    left:-100%;
+    bottom: 0;
+}
+
+#toggle + label{
+    position:absolute;
+    bottom: 0;
+    cursor:pointer;
+    padding:10px;
+    background: rgba(0,0,0,0);
+    width: 100px;
+    border-radius: 3px;
+    padding: 8px 10px;
+    color: black;
+    line-height:20px;
+    font-size:12px;
+    text-align:center;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    margin:0 45.66%;
+    transition:all 500ms ease;
+}
+#toggle + label:after {
+    content:"︿"
+}
+
+
+
+#toggle:checked ~ .message {
+    bottom: 0;
+    transition:all 500ms ease;
+}
+
+#toggle:checked ~ .container {
+    margin-bottom: 220px;
+}
+
+#toggle:checked + label {
+    bottom: 220px;
+}
+
+#toggle:checked + label {
+    background: rgb(222,136,102);
+}
+
+#toggle:checked + label:after {
+    content:"﹀"
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

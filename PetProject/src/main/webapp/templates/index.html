@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/slideUpToggle.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+</head>
+<body>
+<!--<button th:id="btn">click me</button>-->
+<p th:class="title">Fractal Garden</p>
+<div th:id="fractal-picture"></div>
+<img th:id="picture" th:attr="src='/static/img/trees/ImageName'+${picId}+'.PNG'"  alt="" style="width: 1400px; height: 700px;"/>
+<div th:class="bg-modal">
+    <div th:class="modal-content">
+        <div th:class="close">+</div>
+        <form action="?makenew" method="post">
+            <input th:type="text" name="length" placeholder="length (60)" autocomplete="off" required>
+            <input th:type="text" name="newLength" placeholder="length - x (12)" autocomplete="off" required>
+            <input th:type="text" name="angle" placeholder="angle (30)" autocomplete="off" required>
+            <input th:type="hidden" name="HStoredPictures" th:id="HStoredPictures"/>
+            <input th:type="submit" th:value="add">
+
+        </form>
+    </div>
+</div>
+<a th:id="button">
+    <img th:id="edit" th:attr="src='/static/img/add.png'" style="width: 60px; height: 60px;"/>
+</a>
+<a th:id="button1">
+    <img th:id="btn" th:attr="src='/static/img/save1.png'" style="width: 60px; height: 60px;"/>
+</a>
+
+
+
+
+
+
+
+
+
+<input type="checkbox" name="toggle" id="toggle" />
+<label for="toggle"></label>
+
+<div class="message" ><h1> Storage:</h1>
+    <img th:each="tree,iterStat: ${savedTrees}" th:if="${tree} != ''" class="corp-center1" th:attr="src=${tree}" alt=""/>
+</div>
+
+<script th:attr="src='/static/js/modal.js'"></script>
+<script th:attr="src='/static/js/save.js'"></script>
+<script th:attr="src='/static/js/main.js'"></script>
+<script th:attr="src='/static/js/hover.js'"></script>
+</body>
+</html>

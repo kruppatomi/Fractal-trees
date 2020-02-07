@@ -1,0 +1,7 @@
+com/codecool/kruppa/pet/config/ThymeleafConfig.class
+com/codecool/kruppa/pet/config/TemplateEngineUtil.class
+com/codecool/kruppa/pet/controller/JSONController.class
+com/codecool/kruppa/pet/CreateJSONfile.class
+com/codecool/kruppa/pet/Storage.class
+com/codecool/kruppa/pet/Tree.class
+com/codecool/kruppa/pet/controller/IndexPageController.class
